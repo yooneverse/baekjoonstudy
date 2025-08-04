@@ -17,7 +17,7 @@ for last in range(N-1, 0, -1):  # 정렬할 구간의 끝 설정
     if cnt == K:    
         break       # 외부 반복 종료
     elif cnt < K:   # 반복 횟수가 K보다 작으면
-        A = [-1]    # -1 출력
+        A = [-1]  # -1 출력
         break       # 내부 반복 종료
 
 print(*A)   # A 리스트의 원소들 언패킹
