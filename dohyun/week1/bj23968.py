@@ -10,11 +10,8 @@ for last in range(N-1, 0, -1):  # 정렬할 구간의 끝 설정
             A[i], A[i + 1] = A[i + 1], A[i]
             cnt += 1    # 반복 횟수 + 1
             if cnt == K:    # 반복 횟수가 K에 다다르면
-                break       # 내부 반복 종료
-    if cnt == K:
-        break       # 외부 반복 종료
+                print(f'{A[i]} {A[i + 1]}')
 
 if cnt < K:   # 반복 횟수가 K보다 작으면
     A = [-1]  # -1 출력
-
-print(*A)   # A 리스트의 원소들 언패킹
+    print(*A)
