@@ -1,24 +1,22 @@
-def solve():
-    N, K = map(int, input().split())
-    A = list(map(int, input().split()))
-    swaps = 0
-    i = 0
+N, K = map(int, input().split())  
+A = list(map(int, input().split()))  
+count = 0  # 교환 횟수 초기화
 
-    # i가 N-1 미만인 동안, 그리고 아직 K회 교환 전인 동안 반복
-    while i < N-1 and swaps < K:
-        if A[i] > A[i+1]:
-            A[i], A[i+1] = A[i+1], A[i]
-            swaps += 1
-            if swaps == K:
-                print(*A)
-                return
-            # 스왑 후에는 한 칸 뒤로 돌아가 인접 비교
-            i = max(i-1, 0)
-        else:
-            i += 1
+# 버블 정렬 수행
+for last in range(N - 1, 0, -1):
+    for i in range(last):
+        if A[i] > A[i + 1]:
+            # 교환 발생
+            A[i], A[i + 1] = A[i + 1], A[i]
+            count += 1
 
-    # K번 교환 미달 시
+            # K번째 교환 직후 상태 출력
+            if count == K:
+                print(' '.join(map(str, A)))
+                break
+    if count == K:
+        break
+
+# 교환 횟수가 K에 미치지 못하면 -1 출력
+if count < K:
     print(-1)
-
-if __name__ == "__main__":
-    solve()
