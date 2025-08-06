@@ -13,7 +13,9 @@ for last in range(N - 1, 0, -1):
             # K번째 교환 직후 상태 출력
             if count == K:
                 print(' '.join(map(str, A)))
+                # K번째 교환 후 출력이 되었으면 더 이상 진행할 필요 없으므로 break
                 break
+    # K번째 교환을 완료했다면, 바깥쪽 for문도 종료
     if count == K:
         break
 
