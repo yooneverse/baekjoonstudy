@@ -21,7 +21,7 @@ for tc in range(1, T+1):
             best = 0
             if ni < 0 or ni >= N or nj < 0 or nj >= M:  #가장자리를 제외
                 continue
-                best = max(matrix[ni][nj])   #기준점 상하좌우 중 가장 큰 값
+            best = max(matrix[ni][nj])   #기준점 상하좌우 중 가장 큰 값
 
             count = 0       #안전구역
             if s > best:
